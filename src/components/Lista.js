@@ -52,7 +52,7 @@ export function Lista() {
                                 <b>Sexo: </b>${item.sexo}<br />
                                 <b>Cedula: </b>{item.cedula}<br />
                             </p>
-                            <button onClick={eliminar}><BiTrashAlt></BiTrashAlt></button>
+                            <button onClick={() => eliminar(item.id)}><BiTrashAlt></BiTrashAlt></button>
                             <button><AiOutlineEdit></AiOutlineEdit></button>
                         </li>
                 }) 
