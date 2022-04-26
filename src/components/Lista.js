@@ -26,6 +26,18 @@ export function Lista() {
         obtenerDatos()
     })
 
+    const eliminar= async (id) =>{
+        try{
+            const db = firebase.firestore()
+            await db.collection('personas').doc(id).delete()
+            const aux = lista.filter(item => item.id !== id)
+            setLista(aux)
+            alert('eliminado con exito')
+        }catch(error){
+            console.log(error)
+        }
+    }
+
     return(
         <>
         <h3>Lista</h3>
@@ -40,7 +52,7 @@ export function Lista() {
                                 <b>Sexo: </b>${item.sexo}<br />
                                 <b>Cedula: </b>{item.cedula}<br />
                             </p>
-                            <button><BiTrashAlt></BiTrashAlt></button>
+                            <button onClick={eliminar}><BiTrashAlt></BiTrashAlt></button>
                             <button><AiOutlineEdit></AiOutlineEdit></button>
                         </li>
                 }) 
