@@ -3,6 +3,7 @@ import './estilos/general.css'
 import React from 'react';
 import {firebase} from './firebase'
 import {nanoid} from 'nanoid'
+import { Lista } from './components/Lista';
 
 //personas base de datos
 
@@ -60,7 +61,7 @@ function App() {
                 <button type="submit">Crear</button>
             </form>
             <div className="mostrar">
-
+                <Lista></Lista>
             </div>
         </div>
     </div>

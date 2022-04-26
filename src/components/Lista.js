@@ -1,6 +1,8 @@
-import './estilos/lista.css'
 import React from "react"
 import {firebase} from '../firebase'
+import '../estilos/Lista.css'
+import { BiTrashAlt } from "react-icons/bi";
+import { AiOutlineEdit } from "react-icons/ai";
 
 export function Lista() {
     const [lista, setLista] = React.useState([])
@@ -26,7 +28,7 @@ export function Lista() {
 
     return(
         <>
-        <p className='titulo'>Movimientos</p>
+        <h3>Lista</h3>
         <div className="lista">
             <ul>{ 
                 lista.map((item, index)=>{
@@ -38,6 +40,8 @@ export function Lista() {
                                 <b>Sexo: </b>${item.sexo}<br />
                                 <b>Cedula: </b>{item.cedula}<br />
                             </p>
+                            <button><BiTrashAlt></BiTrashAlt></button>
+                            <button><AiOutlineEdit></AiOutlineEdit></button>
                         </li>
                 }) 
             }</ul>    
